@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Chettan");
+:root {
+  /* --dark: #4b4e6d; */
+  --violet: #2f025f;
+  --darkPurple: #2b1940;
+  --green: #6af586;
+  --grey: #f1f7ed;
+  --danger: #f72c47;
+  --screen: #010b19;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #1b1423;
+  scroll-behavior: smooth;
+  font-family: "Baloo Chettan", cursive;
+  /* overflow: hidden; */
+}
+
+/* .App {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background: #1b1423;
+} */
+
+.App {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto auto;
+  height: calc(100vh - 10px);
+}
+
+.panel {
+  position: relative;
+  border: 1px solid black;
+  grid-column: 10 / -1;
+  grid-row: 1 / -1;
+  text-align: center;
+  background: var(--darkPurple);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 0.2s;
+  box-shadow: -5px -3px 10px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  scrollbar-width: none;
+  background-image: linear-gradient(
+    67.4deg,
+    rgb(63, 81, 181) 0.4%,
+    rgb(46, 33, 160) 37.8%,
+    rgb(63, 81, 181) 75.4%
+  );
+}
+.output {
+  /* background: #1b1423; */
+  /* display: grid;
+  grid-template-columns: repeat(12, 1fr); */
+  /* background-image: linear-gradient(
+    67.4deg,
+    rgba(43, 25, 64, 1) 0.4%,
+    rgba(105, 33, 187, 1) 37.8%,
+    rgba(170, 104, 245, 1) 75.4%,
+    rgba(43, 25, 64, 1) 99.2%
+  ); */
+  /* opacity: 0; */
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) all 1s;
+}
+
+.reset,
+.copy,
+.show,
+.copy-modalBTN {
+  padding: 1em;
+  border-radius: 0.3em;
+  margin: 0.5em;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 900;
+  text-shadow: 1px 1px 1px black;
+  opacity: 1;
+  background: transparent;
+  border: 1px solid white;
+  transition: all 0.4s;
+}
+
+.reset {
+  /* grid-column: 1 / -1; */
+  position: fixed;
+  bottom: 5px;
+}
+
+.copy {
+  /* grid-column: 12 / -1; */
+  position: absolute;
+  bottom: 0;
+}
+
+.copy-modalBTN {
+  margin: auto;
+}
+
+.gitBTN {
+  padding: 0.1rem;
+  position: fixed;
+  bottom: 5px;
+  left: 10px;
+}
+.gitBTN > i {
+  transition: all 0.4s;
+}
+
+.gitBTN:hover i {
+  color: var(--green);
+}
+
+.show {
+  /* margin-top: 1rem;
+  grid-column: 1 / -1; */
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+}
+
+.reset:hover {
+  border: 1px solid var(--danger);
+  background-color: var(--danger);
+  cursor: pointer;
+}
+
+.copy:hover,
+.copy-modalBTN:hover,
+.show:hover {
+  border: 1px solid var(--green);
+  background-color: var(--green);
+  cursor: pointer;
+}
+
+.face {
+  margin: 0 0 0 0;
+  grid-column: 1 / 10;
+  grid-row: 1/-1;
+  margin: 0.5rem;
+  border-radius: 20px;
+}
+.face > h1 {
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.faceGrid {
+  grid-column: 1 / 10;
+  grid-row: 1/2;
+}
+
+textarea {
+  grid-column: 1/12;
+  width: 100%;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.5em;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    67.4deg,
+    rgb(63, 81, 181) 0.4%,
+    rgb(46, 33, 160) 37.8%,
+    rgb(63, 81, 181) 75.4%
+  );
+}
+
+.face > h1 {
+  color: white;
+  margin-bottom: 1.5em;
+  text-shadow: 1px 1px 3px black;
+  font-size: 3em;
+}
+
+.panel .header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  background-image: linear-gradient(
+    67.4deg,
+    rgb(38, 36, 121) 0.4%,
+    rgb(89, 74, 226) 37.8%,
+    rgb(89, 74, 226) 75.4%
+  );
+  margin-bottom: 1em;
+  box-shadow: 3px 3px 3px black;
+}
+
+.rotate {
+  margin-top: 0;
+  margin-bottom: 0.2em;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  font-size: 3em;
+  font-weight: bolder;
+  text-decoration: none;
+  transform: perspective(8cm) rotateX(0deg) rotateY(40deg) rotateZ(0deg);
+  transition: all 1s;
+}
+
+.rotate:hover {
+  transform: perspective(8cm) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  cursor: default;
+}
+
+.face > h1 {
+  background-color: var(--danger);
+  color: white;
+}
+
+.output > h1 {
+  color: white;
+  text-align: left;
+  margin-left: 0.5em;
+}
+
+span {
+  color: white;
+  font-size: 1.2em;
+}
+
+textarea {
+  resize: none;
+  border: none;
+  font-weight: bold;
+  scrollbar-width: none;
+}
+
+.title {
+  transform-style: preserve-3d;
+  transform: perspective(12cm) rotateX(-1deg) rotateY(36deg) rotateZ(0deg);
+  width: 100%;
+  overflow: hidden;
+}
+
+.anim {
+  animation: animation 2000ms linear both;
+}
+
+@keyframes animation {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -300, 0, 1);
+  }
+  4.1% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -125.912, 0, 1);
+  }
+  8.11% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -31.647, 0, 1);
+  }
+  12.11% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 5.53, 0, 1);
+  }
+  16.12% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 13.007, 0, 1);
+  }
+  27.23% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 2.352, 0, 1);
+  }
+  38.34% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.311, 0, 1);
+  }
+  60.56% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.007, 0, 1);
+  }
+  82.78% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 5px var(--danger);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--green);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green);
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
