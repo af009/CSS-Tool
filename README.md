@@ -1,6 +1,6 @@
 ## CSS-Tool 
 
-![Alt text](https://github.com/af009/CSS-Tool/blob/master/Screenshot.png?raw=true "Screenshot")
+![css-tool gif](https://user-images.githubusercontent.com/26798926/56133689-b56b8880-5f95-11e9-9a63-730787c24c89.gif)
 
 
 
