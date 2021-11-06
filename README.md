@@ -1,5 +1,5 @@
 # CSS Tool
-## [Live Demo](https://af009.github.io/CSS-Tool/)
+
 
 ![css-tool gif](https://user-images.githubusercontent.com/26798926/56133689-b56b8880-5f95-11e9-9a63-730787c24c89.gif)
 
@@ -47,10 +47,6 @@
 
 ## Feature requests, suggetions or issues
 :arrow_right: afwebd@yahoo.com
-
-## Contribute
-Contributions and donations are welcome!
-<a href="https://www.buymeacoffee.com/r34hDBWa0" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 
 ## License
